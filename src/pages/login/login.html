@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar> <ion-title text-uppercase>Login</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form margin class="form" [formGroup]="validations_form">
+    <ion-item>
+      <ion-label floating text-uppercase> user name </ion-label>
+      <ion-input
+        type="text"
+        name="username"
+        formControlName="username"
+        [value]="UserName"
+        [(ngModel)]="UserName"
+        no-padding
+        no-margin
+      ></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.username">
+        <div
+          class="error-message"
+          *ngIf="
+            validations_form.get('username').hasError(validation.type) &&
+            (validations_form.get('username').dirty ||
+              validations_form.get('username').touched)
+          "
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <br />
+
+    <ion-item>
+      <ion-label floating text-uppercase> password </ion-label>
+      <ion-input
+        type="password"
+        name="password"
+        formControlName="password"
+        [value]="Password"
+        [(ngModel)]="Password"
+        no-padding
+        no-margin
+      ></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div
+          class="error-message"
+          *ngIf="
+            validations_form.get('password').hasError(validation.type) &&
+            (validations_form.get('password').dirty ||
+              validations_form.get('password').touched)
+          "
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <br />
+
+    <button
+      ion-button
+      type="submit"
+      (tap)="loginAction(validations_form.value)"
+      round
+      class="singup"
+    >
+      sign in
+    </button>
+  </form>
+  <ion-row class="custom_login" margin>
+    <ion-col>
+      <p>I NOT have an account. <a (tap)="GoToProfilePage()">Sign Up</a></p>
+    </ion-col>
+  </ion-row>
+</ion-content>

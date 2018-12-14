@@ -1,0 +1,75 @@
+upload-avatar {
+  width: 100%;
+  .user-img {
+    margin: 10px 10px 10px 10px !important;
+  }
+  .label {
+    margin-right: 0px !important;
+  }
+  .item {
+    margin: 0px 0px 15px 0px;
+    background: transparent;
+    &-inner {
+      border-bottom: 0px !important;
+      .label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .user-img {
+          width: 100px !important;
+          height: 80px !important;
+        }
+        button {
+          background-color: transparent;
+          box-shadow: 0 0 0 !important;
+          border: 1px solid $primary_color;
+          color: $primary_color;
+          border-radius: 5px !important;
+          span {
+            .icon {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ion-thumbnail img {
+  border-radius: 40px;
+  border: 1px solid $primary-color;
+}
+
+.item-md.item-block .item-inner {
+  padding-right: 0px;
+}
+
+ion-avatar img,
+ion-thumbnail img {
+  margin: auto;
+}
+
+[dir="rtl"] upload-avatar {
+  .label {
+    margin-right: initial !important;
+    margin-left: 0px !important;
+  }
+  .item {
+    background: transparent;
+    &-inner {
+      border-bottom: 0px !important;
+      .label {
+        button {
+          span {
+            .icon {
+              margin-right: initial;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

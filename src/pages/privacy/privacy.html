@@ -1,0 +1,22 @@
+<ion-content no-padding>
+  <ion-grid class="centertable">
+    <h1>Privacy Policy</h1>
+    <ion-list no-margin class="custom_list">
+      <ion-item>
+        <ion-label text-capitalize> Acssess Location </ion-label>
+        <ion-radio (ionSelect)="location()"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label text-capitalize> Push Notifications </ion-label>
+        <ion-radio (ionSelect)="notification()"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label text-capitalize> Calendar </ion-label>
+        <ion-radio (ionSelect)="calendar()"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" (tap)="privacyPolicy()" round class="go">
+      Let's Go
+    </button>
+  </ion-grid>
+</ion-content>

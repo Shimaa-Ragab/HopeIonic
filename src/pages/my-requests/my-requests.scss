@@ -1,0 +1,144 @@
+page-my-requests {
+  .list {
+    width: 100%;
+    position: relative;
+    // top: 300px;
+  }
+  .scroll-content {
+    padding: 0px 0px 0px 0px !important;
+  }
+  #map {
+    width: 100%;
+    height: 300px;
+    position: fixed !important;
+  }
+  .list ion-item-sliding {
+    background-color: #fff;
+    border-bottom: gray 1px solid;
+  }
+  .chip {
+    border-radius: 20px;
+    height: 32px;
+    width: 32px;
+    align-items: center;
+    margin: 0px;
+    display: grid;
+  }
+  .chip p {
+    text-align: center;
+  }
+  .item h2 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #3a3a3a;
+  }
+  .sub_post p {
+    font-size: 12px;
+    display: block;
+  }
+  .distance {
+    color: #676464;
+    font-size: 15px;
+  }
+  ion-avatar img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .item ion-avatar {
+    min-width: 32px;
+    min-height: 32px;
+  }
+  .item.item-block .item-inner {
+    padding-right: 0px !important;
+  }
+  .label {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 8px 0px 8px;
+  }
+  .col_avatars {
+    padding: 0px 0px 0px 5px;
+  }
+  ion-avatar {
+    display: inline-block;
+  }
+  .head_img {
+    flex: 0 0 20%;
+    width: 20%;
+    max-width: 20%;
+  }
+  .col_padding {
+    padding-right: 0px;
+  }
+  /////////////////////////////*************** fold out ************************//////////////////////
+  /* Static state */
+  // #container-out 	{
+  // width: 400px;
+  // height: 200px;
+  // position: relative;
+  // }
+  .parent1 {
+    /* overall animation container */
+    height: 0;
+    overflow: hidden;
+    transition-property: height;
+    transition-duration: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .parent3 {
+    /* animated, "folded" block */
+    height: 56px;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+  }
+  /* Hover states to trigger animations */
+  #container-out:hover .parent1 {
+    height: 111px;
+  }
+  #container-out:hover .parent3 {
+    transform: rotateX(0deg);
+    // height: 111px;
+  }
+  .denied_custom {
+    width: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/imgs/hide.png);
+  }
+  .join_custom {
+    width: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../assets//imgs/blood-donation.png);
+  }
+  .share_custom {
+    width: 50px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/imgs/share.png);
+  }
+  .custom_img {
+    max-width: 100%;
+    border: 0;
+    border-radius: 50px;
+  }
+  .toast .toast-wrapper.toast-bottom {
+    bottom: 10px;
+    border-radius: 15px;
+    height: 35px;
+    width: fit-content;
+  }
+  .custom_col {
+    margin: 0px 0px 0px 3px !important;
+  }
+  .custom_ch {
+    padding: 3px 0px 0px 0px !important;
+  }
+}

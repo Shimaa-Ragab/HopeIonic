@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>live-track-direction</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row>
+        <!-- <div animates #animation="animates" text-center>
+        </div> -->
+        
+        <button ion-button (click)="animateElem()">Animate it!</button>
+        <button ion-button id="test" (click)="animateBtn($event)">Click me!</button>
+        <ion-card #myElement>
+      <ion-card-header>My Animation Card</ion-card-header>
+      <ion-card-content>So much awesome content and animations. AMAZING!</ion-card-content>
+    </ion-card>
+       </ion-row>
+       
+  <ion-row>
+    <button ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking">
+        <ion-icon name="locate"></ion-icon>
+        Start Tracking
+      </button>
+    <button ion-button full color="danger" icon-left (click)="stopTracking()" *ngIf="isTracking">
+        <ion-icon name="hand"></ion-icon>
+        Stop Tracking
+    </button>
+    <div #map id="map-canvas"></div>
+   </ion-row>
+
+</ion-content>

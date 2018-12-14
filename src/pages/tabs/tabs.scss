@@ -1,0 +1,43 @@
+page-tabs {
+  .tabs .tabbar {
+    background: #fff !important;
+    padding-top: 20px;
+    padding-left: 96px;
+  }
+  .tabs .tab-button[aria-selected="true"] {
+    color: #020202;
+  }
+  .tabs .tab-button-text {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  #first_tab {
+    float: right;
+  }
+  #second_tab {
+    float: center;
+  }
+  #third_tab {
+    float: left;
+  }
+  #tab-t0-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  #tab-t0-1 {
+    padding: 0px 0px 0px 0px;
+  }
+  #tab-t0-2 {
+    padding: 0px 0px 0px 0px;
+  }
+  .bar-buttons {
+    z-index: 1;
+    background-color: transparent;
+    color: #030303;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0),
+      0 0px 0px 0 rgba(0, 0, 0, 0);
+    font-size: 20px;
+    height: 50px;
+    width: 30px;
+    margin: 20px 0px 10px 15px;
+  }
+}

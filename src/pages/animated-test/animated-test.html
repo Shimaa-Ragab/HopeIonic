@@ -1,0 +1,370 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>animated-test</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <button ion-button (click)="toggleVisible()">Toggle it!</button>
+  
+  <p [@myvisibility]="visibleState">
+    I am sometimes here and sometimes there.
+  </p>
+
+<!-- 
+  <ion-card class="scene card__face--front">
+    <ion-card-content>
+         front
+    </ion-card-content>
+ </ion-card>
+ <ion-card class="scene card__face--back">
+  <ion-card-content>
+    back
+</ion-card-content>
+ </ion-card>
+  <p>Click card to flip.</p> -->
+
+
+  <!-- <h1>Hover card</h1> -->
+  <!-- <div class="wrap">
+    <div class="task">
+      <div class="abstract">
+        <h3>Abstract</h3>
+        <p>This is what you see by default.</p>
+      </div>
+      <div class="details">
+        <div class="details__inner">
+          <h3>Details</h3>
+          <p>This additional content gets revealed on hover.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <ion-card class="task">
+    <ion-card-header class="abstract">
+      <h3>Abstract</h3>
+      <p>This is what you see by default.</p>
+    </ion-card-header>
+    <ion-card-content class="details" [@myvisibility]="visibleState">
+      <div class="details__inner">
+        <h3>Details</h3>
+        <p>This additional content gets revealed on hover.</p>
+      </div>
+    </ion-card-content>
+  </ion-card> -->
+
+  <!-------------------------container ------------------------------>
+          <div class="container" onmouseover="this.classList.toggle('hover');">
+            <div class="front" style="background-image: url(https://unsplash.it/500/500/)">
+              <div class="inner">
+                <p>Diligord</p>
+                <span>Lorem ipsum</span>
+              </div>
+            </div>
+            <div class="back">
+              <div class="inner">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum repellat velit quae suscipit c.</p>
+              </div>
+            </div>
+          </div>
+
+  <!-------------------------container-2 ------------------------------>
+          <div class="container-2">
+              <h1>A simple cards animation</h1>
+              <div class="cards">
+
+                <div class="card card-animation-translate">
+                  <div class="card-image">
+                    <img src="http://lorempicsum.com/futurama/510/280/1" alt="">
+                  </div>
+                  <div class="card-text">
+                    <h3>First Card</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                  </div>
+                </div>
+    
+                <div class="card card-animation-move">
+                  <div class="card-image">
+                    <img src="http://lorempicsum.com/futurama/510/280/2" alt="">
+                  </div>
+                  <div class="card-text">
+                    <h3>Second Card</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                  </div>
+                </div>
+                
+                <div class="card card-animation-opacity">
+                  <div class="card-image">
+                    <img src="http://lorempicsum.com/futurama/510/280/3" alt="">
+                  </div>
+                  <div class="card-text">
+                    <h3>Third Card</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                  </div>
+                </div>
+                
+               </div>
+            </div>
+
+   <!---------------------------- cards fade out ------------------------------>   
+   <div class="cards">
+
+      <div class="card">
+        <img src="http://s4c.cymru/temp/wave1.jpg">
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+              Card title
+              <small>Image from unsplash.com</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+        <div class="card">
+        <img src="http://s4c.cymru/temp/wave2.jpg">
+        <div class="card-title">
+          <a href="#" class="toggle-info btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </a>
+          <h2>
+              Card title
+              <small>Image from unsplash.com</small>
+          </h2>
+        </div>
+        <div class="card-flap flap1">
+          <div class="card-description">
+            This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+          </div>
+          <div class="card-flap flap2">
+            <div class="card-actions">
+              <a href="#" class="btn">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+  <!--------------------------- detailes card --------------------------------->
+  <div class="row">
+      <div class="example-1 card-details">
+        <div class="wrapper">
+          <div class="date">
+            <span class="day">12</span>
+            <span class="month">Aug</span>
+            <span class="year">2016</span>
+          </div>
+          <div class="data">
+            <div class="content">
+              <span class="author">Jane Doe</span>
+              <h1 class="title"><a href="#">Boxing icon has the will for a couple more fights</a></h1>
+              <p class="text">The highly anticipated world championship fight will take place at 10am and is the second major boxing blockbuster in the nation after 43 years.</p>
+              <label for="show-menu" class="menu-button"><span></span></label>
+            </div>
+            <input type="checkbox" id="show-menu" />
+            <ul class="menu-content">
+              <li>
+                <a href="#" class="fa fa-bookmark-o"></a>
+              </li>
+              <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+              <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-2 card-details">
+        <div class="wrapper">
+          <div class="header">
+            <div class="date">
+              <span class="day">12</span>
+              <span class="month">Aug</span>
+              <span class="year">2016</span>
+            </div>
+            <ul class="menu-content">
+              <li>
+                <a href="#" class="fa fa-bookmark-o"></a>
+              </li>
+              <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+              <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+            </ul>
+          </div>
+          <div class="data">
+            <div class="content">
+              <span class="author">Jane Doe</span>
+              <h1 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h1>
+              <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.</p>
+              <a href="#" class="button">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------------------ contact card --------------------------------->
+    <div class="contact-area">
+        <div class="contact">
+          <main>
+            <section>
+              <div class="content">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256492/_mLIxaKY_400x400.jpg" alt="Profile Image">
+      
+                <aside>
+                  <h1>Riccardo Cavallo</h1>
+                  <p>Hi, I'm Riccardo Cavallo and I'm a Graphic and Visual Designer.</p>
+                </aside>
+                
+                <button>
+                  <span>Contact Me</span>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M14.83 30.83L24 21.66l9.17 9.17L36 28 24 16 12 28z"></path> </g> </svg>
+                </button>
+              </div>
+      
+              <div class="title"><p>Contact Me</p></div>
+            </section>
+      
+            
+          </main>
+      
+          <nav>
+            <a href="#" class="gmail">
+              <div class="icon">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M16 3v10c0 .567-.433 1-1 1h-1V4.925L8 9.233 2 4.925V14H1c-.567 0-1-.433-1-1V3c0-.283.108-.533.287-.712C.467 2.107.718 2 1 2h.333L8 6.833 14.667 2H15c.283 0 .533.108.713.288.179.179.287.429.287.712z" fill-rule="evenodd"/></svg>
+              </div>
+      
+              <div class="content">
+                <h1>Email</h1>
+                <span>Riccavallo@gmail.com</span>
+              </div>
+              
+              <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path> </g> </svg>
+            </a>
+      
+            <a href="#" class="facebook">
+              <div class="icon">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.48-1.195 1.18v1.54h2.39l-.31 2.42h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0" fill-rule="nonzero"/></svg>
+              </div>
+      
+              <div class="content">
+                <h1>Facebook</h1>
+                <span>Riccardo Cavallo</span>
+              </div>
+              
+              <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path> </g> </svg>
+            </a>
+      
+            <a href="#" class="twitter">
+              <div class="icon">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.37-1.337.64-2.085.79-.598-.64-1.45-1.04-2.396-1.04-1.812 0-3.282 1.47-3.282 3.28 0 .26.03.51.085.75-2.728-.13-5.147-1.44-6.766-3.42C.83 2.58.67 3.14.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.41-.02-.61-.058.42 1.304 1.63 2.253 3.07 2.28-1.12.88-2.54 1.404-4.07 1.404-.26 0-.52-.015-.78-.045 1.46.93 3.18 1.474 5.04 1.474 6.04 0 9.34-5 9.34-9.33 0-.14 0-.28-.01-.42.64-.46 1.2-1.04 1.64-1.7z" fill-rule="nonzero"/></svg>
+              </div>
+      
+              <div class="content">
+                <h1>Twitter</h1>
+                <span>@RichoxDesign</span>
+              </div>
+              
+              <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"> <g class="nc-icon-wrapper" fill="#444444"> <path d="M17.17 32.92l9.17-9.17-9.17-9.17L20 11.75l12 12-12 12z"></path> </g> </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+  <!-------------------------------- comments cards ------------------------------------>
+  <ul class="comments-cards">
+  
+    <li class="com-card">
+      <h1>Comment Card 1 </h1>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet, nibh elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum felis, quis aliquet est rutrum ut. Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus odio adipiscing diam pellentesque rhoncus. Curabitur a bibendum est. Mauris vehicula cursus risus id luctus. Curabitur accumsan venenatis nibh, non egestas ipsum vulputate ac. Vivamus consectetur dolor sit amet enim aliquet eu scelerisque ipsum hendrerit. Donec lobortis suscipit vestibulum. Nullam luctus pellentesque risus in ullamcorper. Nam neque nunc, mattis vitae ornare ut, feugiat a erat. Ut tempus iaculis augue vel pellentesque.</p>
+    </li>
+    <li class="com-card">
+      <h1>Comment Card 2 </h1>
+  
+      <p>Vestibulum nunc massa, gravida quis porta nec, feugiat id metus. Nunc ac arcu dolor, quis vestibulum leo. Cras viverra mollis ipsum, non rhoncus lectus aliquam et. Morbi faucibus purus sit amet lacus aliquet elementum. Donec sit amet posuere enim. Cras in eros id tortor fringilla ultricies. Mauris faucibus ullamcorper velit, pulvinar varius odio eleifend eu. Quisque id odio metus. Morbi adipiscing ultricies posuere. Pellentesque elementum porttitor eros in molestie. Maecenas ut leo quis nisi tempor tincidunt.</p>
+    </li>
+    <li class="com-card">
+      <h1>Comment Card 3</h1>
+  
+      <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
+  
+    </li>
+    <li class="com-card">
+      <h1>Comment Card 4</h1>
+  
+      <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
+  
+    </li>
+  </ul>
+
+  <div class="droplet"></div>
+
+  <div class="wrap">
+    <div class="container-round">
+      <h1>300ms</h1>
+      <div class="box1 box"></div>
+    </div>
+     <div class="container-round">
+      <h1>1s</h1>
+      <div class="box2 box"></div>
+    </div>
+     <div class="container-round">
+      <h1>3s</h1>
+      <div class="box3 box"></div>
+    </div>
+  </div>
+
+  <!------------------------------------- green light ---------------------------------->
+  <div id="target"></div>
+
+  <button ion-button round (click)="animateEl('tada')">Tada</button>
+  <button ion-button round (click)="animateEl('tadaSmall')">Tada Small</button>
+  <button ion-button round (click)="animateEl('flash')">Flash</button>
+  <button ion-button round (click)="animateEl('shake')">Shake</button>
+  <button ion-button round (click)="animateEl('pulseUp')">Pulse Up</button>
+  <button ion-button round (click)="animateEl('pulseDown')">Pulse Down</button>
+  <button ion-button round (click)="animateEl('popIn')">Pop In</button>
+  <button ion-button round (click)="animateEl('popOut')">Pop Out</button>
+  <button ion-button round (click)="animateEl('fadeIn')">Fade In</button>
+  <button ion-button round (click)="animateEl('fadeOut')">Fade Out</button>
+  
+  <!--------------------------------------- fold out -------------------------------------------->
+   <div id="container-out"> 
+     <p>The static state of parent1 sets the 3D transform and perspective states, starting at 0px height. The static state of parent3 sets the transition and transformation of the rotation. Upon hover the parent1 and parent3 heights are animated to full height, 111px in this case, and rotated to 0deg, i.e. a front-facing state.</p>
+    <div class="parent1">
+      <div class="parent2">
+        <div class="parent3">
+          <!-- Content goes here -->
+          <p>The static state of parent1 sets the 3D transform and perspective states, starting at 0px height. The static state of parent3 sets the transition and transformation of the rotation. Upon hover the parent1 and parent3 heights are animated to full height, 111px in this case, and rotated to 0deg, i.e. a front-facing state.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+<!------------------------------------------------------------------------------------->
+<div class="css3-folding-paper">
+	<div class="fold fold1" style="background-image: url(http://juan.aguarondeblas.es/uploaded_images/partitura-tetris-705984.jpg)">
+		<div class="fold fold2">
+			<div class="fold fold3">
+				<div class="fold fold4"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</ion-content>

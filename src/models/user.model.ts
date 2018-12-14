@@ -1,0 +1,36 @@
+export interface IUserModel {
+  user_nm: string;
+  pass: string;
+  email: string;
+  age: number;
+  firstname: string;
+  lastname: string;
+  country: string;
+  city: string;
+  state: string;
+  phone: string;
+  lang: string;
+  gender: string;
+  blood_group: string;
+  snooze: number;
+  isdonner: number;
+  msg: string;
+  Currentloc: any;
+  LastDonnation: any;
+  Username: string;
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  Age: number;
+  Country: string;
+  City: string;
+  State: string;
+  MobileNum: string;
+  IsDonner: boolean;
+  Language: string;
+  RewordPoints: number;
+  Snooze: number;
+  Gender: string;
+  BloodGroup: string;
+  Avatar: string;
+}

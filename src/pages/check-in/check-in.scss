@@ -1,0 +1,119 @@
+page-check-in {
+  #map {
+    height: 240px;
+    z-index: -3;
+  }
+  .scroll-content {
+    padding: 0px !important;
+  }
+  .card-header {
+    padding: 0px;
+  }
+  .img-circular {
+    background-size: auto;
+    display: block;
+  }
+  .card {
+    margin: 0px 10px 10px 10px;
+    position: relative;
+    top: -10%;
+    z-index: -1;
+    padding-top: 35px;
+    border-radius: 8px;
+  }
+  .item {
+    top: -6%;
+    background-color: transparent;
+    z-index: 3;
+    width: 100%;
+    padding-left: 0px;
+  }
+  .item.item-block .item-inner {
+    border-bottom: none;
+  }
+  //    .label {
+  // 	   margin: 0px;
+  //    }
+  .item.item-block .item-inner {
+    padding-right: 0px;
+  }
+  .item ion-avatar {
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .card-content {
+    padding: 0px;
+  }
+  .button {
+    margin: 15px 0px 0px 0px !important;
+    border-radius: 0px;
+    width: 100%;
+    background-color: #19abc7;
+  }
+  .card p {
+    margin: auto;
+  }
+  .name {
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .address {
+    text-transform: capitalize;
+    font-weight: lighter;
+    font-size: small;
+  }
+  .head_row {
+    background-color: #f1f0f0;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 15px 0px rgba(0, 0, 0, 1),
+      0 0px 0px 0 rgba(0, 0, 0, 0);
+  }
+  .points_icon {
+    width: 37%;
+    margin: 0px 10px 0px 42px;
+    display: block;
+  }
+  .item-md ion-avatar ion-img,
+  .item-md ion-avatar img {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background-color: #36acc7;
+  }
+  .label {
+    margin: 0px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .in_circle {
+    background-color: #36acc7;
+    border-radius: 50%;
+    width: 15%;
+    height: 10%;
+    align-items: center;
+    margin: auto;
+  }
+  .first_label {
+    font-size: 10px;
+    margin: 0px 0px 5px 0px;
+    color: #847e7e;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  .second_label {
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+    font-weight: bold;
+    color: #403c3ce3;
+  }
+  .second_label_1 {
+    font-size: 15px;
+  }
+  .second_label_2 {
+    font-size: 12px;
+  }
+  .custom_btn {
+    width: 100%;
+  }
+}

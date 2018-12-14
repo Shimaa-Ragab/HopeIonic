@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar> <ion-title>Verify Code</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="centertable">
+    <h1>Enter Your Code</h1>
+    <ion-row>
+      <table>
+        <tr>
+          <td>
+            <ion-input
+              type="text"
+              #otp1
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next(otp2, $event)"
+            >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input
+              type="text"
+              #otp2
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next(otp3, $event)"
+            >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input
+              type="text"
+              #otp3
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next(otp4, $event)"
+            >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input
+              type="text"
+              #otp4
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next(otp5, $event)"
+            >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input
+              type="text"
+              #otp5
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next(otp6, $event)"
+            >
+            </ion-input>
+          </td>
+          <td>
+            <ion-input
+              type="text"
+              #otp6
+              class="otp"
+              pattern="[0-9]{6}"
+              maxlength="1"
+              size="1"
+              (keyup)="next('', $event)"
+            >
+            </ion-input>
+          </td>
+        </tr>
+      </table>
+    </ion-row>
+    <p class="custom_p">I didn't get a code!</p>
+  </ion-grid>
+</ion-content>

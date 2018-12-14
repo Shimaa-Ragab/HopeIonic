@@ -1,0 +1,18 @@
+<!-- <p style="color: #fff;">{{autocomplete.input}}</p> -->
+<ion-searchbar
+  [(ngModel)]="autocomplete.input"
+  (ionInput)="updateSearchResults()"
+  [placeholder]="txtSearch"
+  floating
+  text-uppercase
+></ion-searchbar>
+<ion-list [hidden]="autocompleteItems.length == 0">
+  <ion-item
+    *ngFor="let item of autocompleteItems"
+    tappable
+    (tap)="selectSearchResult(item)"
+  >
+    <ion-icon name="pin"></ion-icon>
+    {{ item.description }}
+  </ion-item>
+</ion-list>

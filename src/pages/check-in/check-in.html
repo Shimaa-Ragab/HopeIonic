@@ -1,0 +1,58 @@
+<!--
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+-->
+
+<ion-content>
+  <!--
+    <ion-list [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+  -->
+
+  <ion-row class="head_row" padding>
+    <ion-col col-4 align-self-center>
+      <img src="assets/imgs/health.svg" class="points_icon" />
+    </ion-col>
+    <ion-col align-self-center>
+      <p no-padding no-margin class="first_label">YOU HAVE EARNED</p>
+      <p no-padding no-margin class="second_label">
+        <span class="second_label_1">{{ num_points }}</span>
+        <span class="second_label_2">Points</span>
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <div #map id="map"></div>
+
+  <ion-item class="in_circle" no-padding> <ion-label>QR</ion-label> </ion-item>
+
+  <ion-card>
+    <ion-card-content class="img-circular">
+      <ion-row align-items-center>
+        <p class="name">XXX Hospital Name</p>
+      </ion-row>
+      <ion-row align-items-center>
+        <p class="address">road 9, Maaid, Egypt</p>
+      </ion-row>
+      <ion-row>
+        <barcode-scanner
+          class="custom_btn"
+          (BarcodeScannerEvent)="getBarcodeData($event)"
+        ></barcode-scanner>
+        <!--
+          <button ion-button (tap)="geocodeLatLng()">
+            Check in
+          </button>
+        -->
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <charts [BloodBalanceList]="BloodList"></charts>
+</ion-content>

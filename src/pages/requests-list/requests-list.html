@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-uppercase>requests</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list no-margin no-padding *ngIf="request_list">
+    <ion-item-group
+      *ngFor="let request of request_list"
+      id="container-out"
+      no-padding
+      no-margin
+    >
+      <ion-item-divider (tap)="openDetails(request)" no-padding no-margin>
+        <ion-item-sliding>
+          <ion-item no-margin no-padding>
+            <ion-row>
+              <!--
+                <ion-col col-3 no-margin no-padding class="head_img">
+                  <img class="custom_img" [src]="request.Url" />
+                </ion-col>
+              -->
+              <ion-col no-padding col-12 class="custom_col">
+                <ion-row no-margin no-padding>
+                  <ion-col col-9 no-margin class="custom_ch">
+                    <h2>{{ request.IdDonnationName }}</h2>
+                    <p>{{ request.Date }}</p>
+                  </ion-col>
+                  <ion-col col-3 no-margin no-padding>
+                    <p class="distance" float-right>
+                      {{ request.DonnersNumber }}
+                    </p>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="sub_post">
+                  <ion-col no-margin no-padding col-12>
+                    <p
+                      style="white-space: pre-line;"
+                      [innerHTML]="request.Cause"
+                    ></p>
+                    <h3>Location: {{ request.Location.text }}</h3>
+                  </ion-col>
+                </ion-row>
+                <ion-row align-items-end no-margin no-padding>
+                  <ion-col col-6 offset-6 class="col_padding">
+                    <ion-row float-right>
+                      <ion-chip *ngFor="let bloodtype of request.BloodType">
+                        <p>{{ bloodtype }}</p>
+                      </ion-chip>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+
+          <ion-item-options side="left">
+            <button
+              ion-button
+              color="danger"
+              (click)="reminder(request)"
+              style="font-size: 15px;"
+            >
+              <ion-icon name="calendar" margin></ion-icon>
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button
+              ion-button
+              color="secondary"
+              (click)="join(request)"
+              style="font-size: 15px;"
+            >
+              <ion-icon name="link" margin></ion-icon>
+            </button>
+            <button
+              ion-button
+              color="primary"
+              (click)="share(request)"
+              style="font-size: 15px;"
+            >
+              <ion-icon name="share" margin></ion-icon>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-item-divider>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

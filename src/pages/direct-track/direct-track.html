@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>direct-track</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-row>
+    <!-- <input name="checkbox1" onclick="showPOI1($(this));" type="checkbox" id="checkbox" />Info<br> -->
+<ion-col>
+<ion-label> Start: </ion-label>
+  <ion-select id="start" (ionChange)="startChanged($event)" >
+    <ion-option value="penn station, new york, ny">Penn Station</ion-option>
+    <ion-option value="grand central station, new york, ny">Grand Central Station</ion-option>
+    <ion-option value="625 8th Avenue, New York, NY, 10018">Port Authority Bus Terminal</ion-option>
+    <ion-option value="staten island ferry terminal, new york, ny">Staten Island Ferry Terminal</ion-option>
+    <ion-option value="101 E 125th Street, New York, NY">Harlem - 125th St Station</ion-option>
+  </ion-select>
+</ion-col>
+<ion-col>
+  <ion-label> End: </ion-label>
+  <ion-select id="end" (ionChange)="endChanged($event)" >
+    <ion-option value="260 Broadway New York NY 10007">City Hall</ion-option>
+    <ion-option value="W 49th St & 5th Ave, New York, NY 10020">Rockefeller Center</ion-option>
+    <ion-option value="moma, New York, NY">MOMA</ion-option>
+    <ion-option value="350 5th Ave, New York, NY, 10118">Empire State Building</ion-option>
+    <ion-option value="253 West 125th Street, New York, NY">Apollo Theater</ion-option>
+    <ion-option value="1 Wall St, New York, NY">Wall St</ion-option>
+  </ion-select>
+</ion-col>
+    <!-- <div id="legend"> <h3> Keterangan : </h3></div> -->
+</ion-row>
+  <div id="warnings-panel"></div>
+  <input style="margin-top:30px" id="locationTextField" type="text" size="50">
+  <div id="map-canvas"></div>
+   
+</ion-content>

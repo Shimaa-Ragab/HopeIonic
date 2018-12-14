@@ -1,0 +1,70 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-background {
+  background: $primary-color;
+}
+.toolbar-title {
+  color: white;
+}
+#menu_content {
+  background-color: $secondary-color;
+}
+// .content {
+//     background-color: #324353;
+// }
+.item_menu {
+  color: white;
+  background-color: $secondary-color;
+  margin: initial;
+}
+[icon-left] ion-icon,
+[icon-start] ion-icon {
+  line-height: 0.9;
+}
+.list {
+  margin: 5px 10px 5px 10px;
+}
+.list .item-block .item-inner {
+  border-bottom: none;
+}
+ion-label {
+  font-size: 18px;
+}
+.singout_menu {
+  margin: auto;
+  display: block;
+  background-color: $primary-color;
+}
+#menu_content .label {
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: 20px;
+}
+.custom_toast {
+  top: 157px !important;
+  .toast-wrapper {
+    background: $primary-color;
+    opacity: 0.8;
+    border-radius: 0px;
+    text-align: center;
+  }
+  .toast-message {
+    font-size: 20px;
+    color: white;
+    padding: 120px 16px 80px 16px;
+  }
+}

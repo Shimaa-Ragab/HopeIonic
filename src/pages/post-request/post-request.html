@@ -1,0 +1,196 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-uppercase>post request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form margin class="form" [formGroup]="validations_form">
+    <ion-item>
+      <!-- <ion-label floating text-uppercase> cause </ion-label> -->
+      <ion-textarea
+        type="text"
+        name="cause"
+        formControlName="cause"
+        class="form-controll"
+        placeholder="Description"
+        text-uppercase
+        floating
+      ></ion-textarea>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.cause">
+        <div
+          class="error-message  text-red"
+          *ngIf="
+            validations_form.get('cause').hasError(validation.type) &&
+            (validations_form.get('cause').dirty ||
+              validations_form.get('cause').touched)
+          "
+        >
+          {{ validation_messages }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-row no-margin no-padding>
+      <ion-col no-margin no-padding>
+        <ion-item class="custom_date">
+          <ion-datetime
+            displayFormat="DD MMM YYYY"
+            name="date"
+            formControlName="date"
+            class="form-controll"
+            placeholder="Date"
+            text-uppercase
+            floating
+          ></ion-datetime>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.date">
+            <div
+              class="error-message text-red"
+              *ngIf="
+                validations_form.get('date').hasError(validation.type) &&
+                (validations_form.get('date').dirty ||
+                  validations_form.get('date').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </ion-col>
+      <ion-col no-margin no-padding>
+        <ion-item class="custom_item">
+          <!-- <ion-label floating text-uppercase>blood group</ion-label> -->
+          <ion-select
+            (ionChange)="onchangeBloodGroup($event)"
+            formControlName="bloodgroup"
+            class="form-controll"
+            placeholder="blood group"
+            floating
+            text-uppercase
+          >
+            <ion-option value="A+">A+</ion-option>
+            <ion-option value="A-">A-</ion-option>
+            <ion-option value="B+">B+</ion-option>
+            <ion-option value="B-">B-</ion-option>
+            <ion-option value="AB+">AB+</ion-option>
+            <ion-option value="AB-">AB-</ion-option>
+            <ion-option value="O+">O+</ion-option>
+            <ion-option value="O-">O-</ion-option>
+            <ion-option value="['A+','A-','B+','B-','AB+','AB-','O+','O-']"
+              >All</ion-option
+            >
+          </ion-select>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container
+            *ngFor="let validation of validation_messages.bloodgroup"
+          >
+            <div
+              class="error-message"
+              *ngIf="
+                validations_form.get('bloodgroup').hasError(validation.type) &&
+                (validations_form.get('bloodgroup').dirty ||
+                  validations_form.get('bloodgroup').touched)
+              "
+            >
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="custom_num_donners">
+      <ion-label text-uppercase class="custom_label">Num of Donners </ion-label>
+      <button ion-button icon-only (tap)="addDonner()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <ion-input
+        type="number"
+        formControlName="num_donners"
+        class="form-controll"
+        name="num_donners"
+        [(ngModel)]="numDonners"
+        disabled="true"
+      >
+      </ion-input>
+      <button ion-button icon-only (tap)="removeDonner()">
+        <ion-icon name="remove"></ion-icon>
+      </button>
+    </ion-row>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.num_donners">
+        <div
+          class="error-message text-red"
+          *ngIf="
+            validations_form.get('num_donners').hasError(validation.type) &&
+            (validations_form.get('num_donners').dirty ||
+              validations_form.get('num_donners').touched)
+          "
+        >
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <!--
+      <ion-item class="custom_item" margin-bottom>
+        <ion-label floating text-uppercase>blood bank</ion-label>
+        <ion-select
+          (ionChange)="onChangeBloodBank($event)"
+          formControlName="bloodbank"
+          class="form-controll"
+        >
+          <ion-option
+            *ngFor="let bloodbank of bloodbank_list"
+            [value]="bloodbank._id"
+            >{{ bloodbank.Location.text }}</ion-option
+          >
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.bloodbank">
+          <div
+            class="error-message"
+            *ngIf="
+              validations_form.get('bloodbank').hasError(validation.type) &&
+              (validations_form.get('bloodbank').dirty ||
+                validations_form.get('bloodbank').touched)
+            "
+          >
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+    -->
+
+    <ion-row id="location-row">
+      <ion-col col-12>
+        <location
+          id="register_location"
+          [addTxt]="addressTxt"
+          (addressEvent)="receiveAddress($event)"
+        ></location>
+      </ion-col>
+    </ion-row>
+    <div #map id="map-canvas"></div>
+
+    <button
+      ion-button
+      type="submit"
+      (tap)="createRequest(validations_form.value)"
+      [disabled]="validations_form.valid"
+      round
+      class="request"
+    >
+      Post Request
+    </button>
+  </form>
+</ion-content>

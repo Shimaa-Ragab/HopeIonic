@@ -1,0 +1,11 @@
+<ion-item>
+  <div>
+    <ion-thumbnail item-center class="user-img">
+      <img [src]="inputAvatar.changeAvatar.length > 0 ? inputAvatar.changeAvatar : 'assets/imgs/user.png'" (tap)="takePicture()">
+    </ion-thumbnail>
+  </div>
+  <button ion-button (tap)="takePicture()">
+    <ion-icon name="image"></ion-icon>
+    {{inputAvatar.txtAvatar}}
+  </button>
+</ion-item>

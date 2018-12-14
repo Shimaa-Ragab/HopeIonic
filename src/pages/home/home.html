@@ -1,0 +1,116 @@
+<ion-content>
+  <ion-row> <div #map id="map"></div> </ion-row>
+
+  <ion-row id="search_row" margin>
+    <ion-col col-10 no-margin no-padding>
+      <ion-searchbar
+        no-margin
+        no-padding
+        id="map_search"
+        animated
+        showCancelButton
+        clearInput
+      >
+      </ion-searchbar>
+    </ion-col>
+    <ion-col col-2 no-margin no-padding>
+      <button ion-button no-margin id="filter_btn">
+        <ion-icon name="options" id="filter_icon"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <div *ngIf="twitters_list">
+    <ion-list no-margin no-padding>
+      <ion-item-group
+        *ngFor="let twitter of twitters_list"
+        id="container-out"
+        no-padding
+        no-margin
+      >
+        <ion-item-divider no-padding no-margin>
+          <ion-item-sliding>
+            <ion-item no-margin no-padding>
+              <ion-row>
+                <ion-col col-3 no-margin no-padding class="head_img">
+                  <img class="custom_img" [src]="twitter.ProfileImage" />
+                </ion-col>
+                <ion-col no-padding col-9 class="custom_col">
+                  <ion-row no-margin no-padding>
+                    <ion-col col-9 no-margin class="custom_ch">
+                      <h2>{{ twitter.UserName }}</h2>
+                    </ion-col>
+                    <ion-col col-3 no-margin no-padding>
+                      <!-- <p class="distance" float-right>0.333</p> -->
+                    </ion-col>
+                  </ion-row>
+                  <ion-row class="sub_post">
+                    <ion-col no-margin no-padding col-12>
+                      <p
+                        style="white-space: pre-line;"
+                        [innerHTML]="twitter.Tweet"
+                      ></p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row align-items-end no-margin no-padding>
+                    <ion-col col-6 offset-6 class="col_padding">
+                      <ion-row float-right>
+                        <ion-avatar>
+                          <img src="assets/imgs/viewImagew.jpeg" />
+                        </ion-avatar>
+                        <ion-avatar>
+                          <img src="assets/imgs/Stacey_Back-7828web.jpg" />
+                        </ion-avatar>
+                        <ion-chip>
+                          <p>+{{ twitter.RetweetCount }}</p>
+                        </ion-chip>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+
+            <ion-item-options side="left">
+              <button
+                ion-button
+                color="danger"
+                (click)="reminder(twitter.TweetId)"
+              >
+                <ion-icon
+                  name="calendar"
+                  margin
+                  style="font-size: 20px;"
+                ></ion-icon>
+              </button>
+            </ion-item-options>
+            <ion-item-options side="right">
+              <button
+                ion-button
+                color="secondary"
+                (click)="join(twitter.TweetId)"
+              >
+                <ion-icon
+                  name="link"
+                  margin
+                  style="font-size: 20px;"
+                ></ion-icon>
+              </button>
+              <button
+                ion-button
+                color="primary"
+                (click)="share(twitter.TweetId)"
+              >
+                <ion-icon
+                  name="share"
+                  margin
+                  style="font-size: 20px;"
+                ></ion-icon>
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-item-divider>
+      </ion-item-group>
+    </ion-list>
+  </div>
+</ion-content>
